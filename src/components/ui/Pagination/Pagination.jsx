@@ -1,6 +1,6 @@
 import { Pagination as BasePagination, Box, Stack } from '@mui/material';
 
-const Pagination = ({count, onChange}) => {
+const Pagination = ({ count, onChange }) => {
   return (
     <Box
       sx={{
