@@ -8,3 +8,4 @@ WPU Course Fullstack GO ReactJS
 - Roboto Font
 - Material UI
 - Material UI Icons
+- React Hook Form
