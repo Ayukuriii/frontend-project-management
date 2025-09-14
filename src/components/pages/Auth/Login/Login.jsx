@@ -8,9 +8,9 @@ import TextField from '../../../ui/Forms/TextField/TextField';
 
 const Login = () => {
   const { control, watch } = useForm({
-    defaultValues:{
-      dateFilter: dayjs()
-    }
+    defaultValues: {
+      dateFilter: dayjs(),
+    },
   });
 
   const username = watch('username');
