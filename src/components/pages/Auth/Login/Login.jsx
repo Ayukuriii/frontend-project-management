@@ -1,17 +1,25 @@
 import { Paper, Stack } from '@mui/material';
+import dayjs from 'dayjs';
 import { useForm } from 'react-hook-form';
 
+import DatePicker from '../../../ui/Forms/DatePicker/DatePicker';
 import Select from '../../../ui/Forms/Select';
 import TextField from '../../../ui/Forms/TextField/TextField';
 
 const Login = () => {
-  const { control, watch } = useForm();
+  const { control, watch } = useForm({
+    defaultValues:{
+      dateFilter: dayjs()
+    }
+  });
 
   const username = watch('username');
   const category = watch('category');
+  const dateFilter = watch('dateFilter');
 
   console.log('username', username);
   console.log('category', category);
+  console.log('dateFilter', dateFilter);
 
   return (
     <Stack
@@ -38,6 +46,12 @@ const Login = () => {
             { value: '3', label: 'Category 3' },
             { value: '4', label: 'Category 4' },
           ]}
+        />
+
+        <DatePicker
+          name={'dateFilter'}
+          control={control}
+          label={'Filter by date'}
         />
       </Paper>
     </Stack>
