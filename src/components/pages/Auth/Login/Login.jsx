@@ -1,61 +1,66 @@
-import { Paper, Stack } from '@mui/material';
-import dayjs from 'dayjs';
+import { Button, Paper, Stack, Typography } from '@mui/material';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router';
 
-import DatePicker from '../../../ui/Forms/DatePicker/DatePicker';
-import Select from '../../../ui/Forms/Select';
-import TextField from '../../../ui/Forms/TextField/TextField';
+import AuthLayout from '@/components/layouts/AuthLayout';
+import TextField from '@/components/ui/Forms/TextField';
+import session from '@/utils/session';
 
 const Login = () => {
-  const { control, watch } = useForm({
-    defaultValues: {
-      dateFilter: dayjs(),
-    },
-  });
+  const navigate = useNavigate();
 
-  const username = watch('username');
-  const category = watch('category');
-  const dateFilter = watch('dateFilter');
+  const { control, handleSubmit } = useForm();
 
-  console.log('username', username);
-  console.log('category', category);
-  console.log('dateFilter', dateFilter);
+  const onSubmit = (formValues) => {
+    console.log('Login data: ', formValues);
+    session.setSession('dummy-token');
+    navigate('/');
+  };
 
   return (
-    <Stack
-      spacing={2}
-      alignItems={'center'}
-      justifyContent={'center'}
-      height={'100vh'}
-    >
+    <AuthLayout>
       <Paper
         sx={{
-          width: 600,
           padding: 2,
+          width: '500',
         }}
       >
-        <TextField name={'username'} control={control} label={'Username'} />
+        <Typography
+          variant="h5"
+          component={'h1'}
+          align="center"
+          marginBottom={2}
+        >
+          Masuk
+        </Typography>
 
-        <Select
-          name={'category'}
-          control={control}
-          label={'Category'}
-          options={[
-            { value: '1', label: 'Category 1' },
-            { value: '2', label: 'Category 2' },
-            { value: '3', label: 'Category 3' },
-            { value: '4', label: 'Category 4' },
-          ]}
-        />
-
-        <DatePicker
-          name={'dateFilter'}
-          control={control}
-          label={'Filter by date'}
-        />
+        <Stack
+          flexDirection={'column'}
+          gap={1}
+          component={'form'}
+          onSubmit={handleSubmit(onSubmit)}
+        >
+          <TextField label={'Email'} control={control} name="email" />
+          <TextField
+            type="password"
+            label={'Password'}
+            control={control}
+            name="password"
+          />
+          <Button type="submit" variant="contained" fullWidth>
+            Masuk
+          </Button>
+          <Button
+            type="Button"
+            variant="text"
+            onClick={() => navigate('/signup')}
+            fullWidth
+          >
+            Daftar baru
+          </Button>
+        </Stack>
       </Paper>
-    </Stack>
+    </AuthLayout>
   );
 };
-
 export default Login;

@@ -16,11 +16,8 @@ const DetailProject = () => {
       direction={'row'}
       spacing={2}
     >
-      <Avatar
-        text={'Ekadian'}
-        onClick={() => console.log('Avatar Clicked')}
-      />
-      
+      <Avatar text={'Ekadian'} onClick={() => console.log('Avatar Clicked')} />
+
       <Dropdown
         icon={<Settings />}
         options={[

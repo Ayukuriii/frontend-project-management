@@ -24,3 +24,5 @@
 - create avatar component
 - create layout + sidebar menu
 - create path alias
+- create session logic using local storage
+- implement session logic
