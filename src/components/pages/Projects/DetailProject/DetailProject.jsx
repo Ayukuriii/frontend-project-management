@@ -1,7 +1,8 @@
-import { Stack } from '@mui/material';
-import DropDown from '../../../ui/DropDown';
 import { Settings } from '@mui/icons-material';
+import { Stack } from '@mui/material';
+
 import Avatar from '../../../ui/Avatar';
+import Dropdown from '../../../ui/Dropdown';
 
 const DetailProject = () => {
   return (
@@ -20,7 +21,7 @@ const DetailProject = () => {
         onClick={() => console.log('Avatar Clicked')}
       />
       
-      <DropDown
+      <Dropdown
         icon={<Settings />}
         options={[
           {

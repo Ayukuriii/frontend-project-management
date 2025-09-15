@@ -1,7 +1,7 @@
 import { IconButton, Menu, MenuItem } from '@mui/material';
 import { useState } from 'react';
 
-const DropDown = ({ options, icon }) => {
+const Dropdown = ({ options, icon }) => {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const open = Boolean(anchorEl);
@@ -34,4 +34,4 @@ const DropDown = ({ options, icon }) => {
   );
 };
 
-export default DropDown;
+export default Dropdown;
