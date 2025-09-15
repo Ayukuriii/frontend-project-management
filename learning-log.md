@@ -24,5 +24,9 @@
 - create avatar component
 - create layout + sidebar menu
 - create path alias
+
+16/09/2025
+
 - create session logic using local storage
 - implement session logic
+- add axios and integrate authentiacation (login/logout)
