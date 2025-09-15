@@ -22,3 +22,5 @@
 15/09/2025
 
 - create avatar component
+- create layout + sidebar menu
+- create path alias
