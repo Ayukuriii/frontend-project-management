@@ -18,3 +18,7 @@
 
 - create date picker component
 - create dropdown component
+
+15/09/2025
+
+- create avatar component
